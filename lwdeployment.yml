@@ -1,0 +1,25 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  creationTimestamp: null
+  labels:
+    app: lwwebflaskdeploy
+  name: lwwebflaskdeploy
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: lwwebflaskdeploy
+  strategy: {}
+  template:
+    metadata:
+      creationTimestamp: null
+      labels:
+        app: lwwebflaskdeploy
+    spec:
+      containers:
+      - image: vimal13/lwwebflask:v1
+        name: lwwebflask
+        imagePullPolicy: Always
+        resources: {}
+status: {}
